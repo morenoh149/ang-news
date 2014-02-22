@@ -1,0 +1,31 @@
+<div class="container profile">
+
+  <div class="row">
+    <div class="col-sm-1">
+      <img ng-src="http://www.gravatar.com/avatar/{{ user.md5_hash }}" class="prof-img" />
+    </div>
+
+    <div class="col-sm-10">
+      <span class="name">
+        {{ user.username }}
+      </span>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-target="#submissions" data-toggle="tab">Submissions</a></li>
+      <li><a data-target="#comments" data-toggle="tab">Comments</a></li>
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="tab-content">
+  <div ng-include="'views/posts.html'" class="tab-pane active" id="submissions" ng-controller="PostsCtrl"></div>
+  <div class="container posts-page tab-pane" id="comments"></div>
+</div>

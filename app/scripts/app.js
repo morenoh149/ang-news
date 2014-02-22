@@ -26,6 +26,10 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/login.html',
       controller: 'AuthCtrl'
     })
+    .when('/users/:username', {
+      templateUrl: 'views/profile.html',
+      controller: 'ProfileCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
