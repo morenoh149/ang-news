@@ -4,7 +4,7 @@ app.controller('ProfileCtrl',
   function ($scope, $routeParams, Post, User) {
     $scope.user = User.findByUsername($routeParams.username);
 
-    $scope.commentPosts = {};
+    $scope.commentedPosts = {};
 
     $scope.user.$on('loaded', function () {
       populatePosts();

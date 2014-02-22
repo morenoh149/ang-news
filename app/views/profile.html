@@ -27,5 +27,23 @@
 
 <div class="tab-content">
   <div ng-include="'views/posts.html'" class="tab-pane active" id="submissions" ng-controller="PostsCtrl"></div>
-  <div class="container posts-page tab-pane" id="comments"></div>
+  <div class="container posts-page tab-pane" id="comments">
+    <div class="post row" ng-repeat="(commentId, comment) in comments">
+      <div class="col-xs-1">
+
+      </div>
+      <div class="col-md-9 col-xs-11">
+        <div class="info">
+          <a href="{{ commentedPosts[comment.postId].url }}">{{ commentedPosts[comment.postId].title }}</a>
+          <span class="url">({{ commentedPosts[comment.postId].url | hostnameFromUrl }})</span>
+        </div>
+
+        <a href="#/posts/{{ comment.postId }}">comments</a>
+        <p>{{ comment.text }}</p>
+      </div>
+      <div class="col-md-2">
+
+      </div>
+    </div>
+  </div>
 </div>
